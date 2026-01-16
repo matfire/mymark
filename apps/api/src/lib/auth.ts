@@ -23,7 +23,7 @@ export const auth = betterAuth({
   },
   plugins: [
     passkey({
-      // rpID: "com.vivamark",
+      rpID: process.env.RP_ID,
       rpName: "Vivamark",
     }),
   ],
