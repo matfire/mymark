@@ -10,7 +10,7 @@ import { Show, useContext } from "solid-js";
 import { useSelectedFile } from "../contexts/selected-file";
 import { Editor } from "../components/editor";
 import { authClient } from "../lib/auth-client";
-import { FiUser, FiLogIn } from "solid-icons/fi";
+import { FiUser, FiLogIn, FiFileText } from "solid-icons/fi";
 import { SyncStatus } from "../components/sync-status";
 
 export const Route = createFileRoute("/")({
@@ -66,7 +66,29 @@ function RouteComponent() {
 
       {/* Main content */}
       <div class="flex flex-1 min-h-0">
-        <Show when={doc()?.doneLoading}>
+        <Show
+          when={doc()?.doneLoading}
+          fallback={
+            <div class="flex flex-1 items-center justify-center">
+              <div class="text-center">
+                <div class="flex justify-center mb-6">
+                  <div class="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <FiFileText class="w-8 h-8 text-primary animate-pulse" />
+                  </div>
+                </div>
+                <h1 class="font-heading text-2xl font-semibold text-base-content mb-2">
+                  Loading your workspace
+                </h1>
+                <p class="text-base-content/50 mb-6">
+                  Please wait while we load your documents...
+                </p>
+                <div class="flex justify-center">
+                  <span class="loading loading-spinner loading-md text-primary"></span>
+                </div>
+              </div>
+            </div>
+          }
+        >
           <aside class="w-64 shrink-0 glass-sidebar">
             <FileTree docUrl={doc()!.url} />
           </aside>
