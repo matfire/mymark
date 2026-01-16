@@ -4,9 +4,11 @@ import { BrowserWebSocketClientAdapter } from "@automerge/automerge-repo-network
 import { IndexedDBStorageAdapter } from "@automerge/automerge-repo-storage-indexeddb";
 
 export const repo = new Repo({
-	storage: new IndexedDBStorageAdapter(),
-	network: [
-		new BroadcastChannelNetworkAdapter(),
-		new BrowserWebSocketClientAdapter("ws://localhost:3000/automerge"),
-	],
+  storage: new IndexedDBStorageAdapter(),
+  network: [
+    new BroadcastChannelNetworkAdapter(),
+    new BrowserWebSocketClientAdapter(
+      `ws://${import.meta.env.VITE_API_URL}/automerge`,
+    ),
+  ],
 });
