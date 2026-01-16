@@ -1,0 +1,15 @@
+packages:
+  - apps/*
+  - packages/*
+
+catalog:
+  "@better-auth/passkey": ^1.4.13
+  better-auth: ^1.4.13
+  drizzle-orm: ^0.45.1
+  dotenv: ^17.2.3
+  typescript: "~5.9.3"
+  "@biomejs/biome": 2.3.11
+
+onlyBuiltDependencies:
+  - cbor-extract
+  - esbuild

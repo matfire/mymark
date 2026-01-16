@@ -1,0 +1,11 @@
+{
+	"extends": "//",
+	"files": {
+		"includes": ["**/*.{ts,js,json}", "!src/routeTree.gen.ts"]
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	}
+}

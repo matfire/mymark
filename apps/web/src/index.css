@@ -1,0 +1,296 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@import "./editor.css";
+
+/* =====================================================
+   MIDNIGHT MANUSCRIPT THEME
+   A modern digital interpretation of a late-night writer's sanctuary
+   ===================================================== */
+
+/* Custom DaisyUI Theme */
+@plugin "daisyui/theme" {
+  name: "midnight-manuscript";
+  default: true;
+
+  /* Base colors - warm darkness */
+  --color-base-100: #1a1618;
+  --color-base-200: #13111a;
+  --color-base-300: #251f28;
+  --color-base-content: #e8e2dc;
+
+  /* Primary - warm amber "desk lamp" */
+  --color-primary: #d4a574;
+  --color-primary-content: #1a1618;
+
+  /* Secondary - muted lavender "ink" */
+  --color-secondary: #8b7fa8;
+  --color-secondary-content: #1a1618;
+
+  /* Accent - electric copper for CTAs */
+  --color-accent: #e07850;
+  --color-accent-content: #1a1618;
+
+  /* Neutral */
+  --color-neutral: #2a2430;
+  --color-neutral-content: #e8e2dc;
+
+  /* Status colors */
+  --color-info: #7da4c9;
+  --color-info-content: #1a1618;
+  --color-success: #7fb07f;
+  --color-success-content: #1a1618;
+  --color-warning: #d4a574;
+  --color-warning-content: #1a1618;
+  --color-error: #c97d7d;
+  --color-error-content: #1a1618;
+
+  /* Border radius */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.75rem;
+}
+
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+
+@theme {
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Literata", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Font utility classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* =====================================================
+   ATMOSPHERIC BACKGROUNDS
+   ===================================================== */
+
+.bg-atmospheric {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(212, 165, 116, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(139, 127, 168, 0.03) 0%, transparent 50%),
+    linear-gradient(to bottom, #1a1618, #13111a);
+}
+
+.bg-atmospheric-auth {
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(212, 165, 116, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 70%, rgba(139, 127, 168, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 60%, rgba(224, 120, 80, 0.02) 0%, transparent 40%),
+    linear-gradient(to bottom, #1a1618, #13111a);
+}
+
+/* =====================================================
+   NOISE TEXTURE OVERLAY
+   ===================================================== */
+
+.noise-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* =====================================================
+   GLASSMORPHISM
+   ===================================================== */
+
+.glass-sidebar {
+  background: rgba(19, 17, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+.glass-card {
+  background: rgba(26, 22, 24, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+/* =====================================================
+   PAPER GLOW EFFECT (Editor)
+   ===================================================== */
+
+.paper-glow {
+  position: relative;
+}
+
+.paper-glow::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+/* Spin animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Gradient orb animation (auth pages background) */
+@keyframes gradient-orb {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.4;
+  }
+}
+
+.animate-gradient-orb {
+  animation: gradient-orb 8s ease-in-out infinite;
+}
+
+/* =====================================================
+   FILE TREE STYLES
+   ===================================================== */
+
+.file-tree-item {
+  transition: all 0.15s ease;
+}
+
+.file-tree-item:hover {
+  transform: translateX(2px);
+}
+
+.file-tree-item-selected {
+  border-left: 2px solid #d4a574;
+  box-shadow: -4px 0 12px -4px rgba(212, 165, 116, 0.3);
+  background: linear-gradient(to right, rgba(212, 165, 116, 0.1), transparent);
+}
+
+/* Vertical indentation guides */
+.file-tree-indent {
+  position: relative;
+}
+
+.file-tree-indent::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(212, 165, 116, 0.1);
+}
+
+/* =====================================================
+   BUTTON ENHANCEMENTS
+   ===================================================== */
+
+.btn-glow:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(212, 165, 116, 0.3);
+}
+
+.btn-glow:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   AVATAR GLOW RING
+   ===================================================== */
+
+.avatar-glow {
+  position: relative;
+}
+
+.avatar-glow::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4a574, #8b7fa8, #e07850);
+  opacity: 0.6;
+  z-index: -1;
+  filter: blur(4px);
+}
+
+/* =====================================================
+   SCROLLBAR STYLING
+   ===================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 165, 116, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 165, 116, 0.3);
+}
+
+/* =====================================================
+   UTILITY OVERRIDES
+   ===================================================== */
+
+/* Make cards use the glass effect by default in dark theme */
+.card {
+  background: rgba(26, 22, 24, 0.6);
+  border: 1px solid rgba(212, 165, 116, 0.08);
+}
+
+/* Input focus states */
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: rgba(212, 165, 116, 0.4);
+  box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.1);
+}
+
+/* Divider styling */
+.divider::before,
+.divider::after {
+  background: linear-gradient(to right, transparent, rgba(212, 165, 116, 0.15), transparent);
+}
+
+/* Link styling */
+.link-primary {
+  color: #d4a574;
+}
+
+.link-primary:hover {
+  color: #e0b88a;
+}
