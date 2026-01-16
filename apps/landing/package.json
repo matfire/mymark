@@ -1,0 +1,25 @@
+{
+	"name": "landing",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "vite build",
+		"dev": "vite dev",
+		"lint": "biome check",
+		"lint:fix": "pnpm lint --write"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.27.0",
+	"devDependencies": {
+		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.18",
+		"tailwindcss": "^4.1.18"
+	}
+}
