@@ -8,7 +8,9 @@ export const repo = new Repo({
   network: [
     new BroadcastChannelNetworkAdapter(),
     new BrowserWebSocketClientAdapter(
-      `ws://${import.meta.env.VITE_API_URL}/automerge`,
+      import.meta.env.PROD
+        ? `wss://${import.meta.env.VITE_API_URL}/automerge`
+        : `ws://localhost:3000/automerge`,
     ),
   ],
 });
