@@ -29,7 +29,7 @@ function RouteComponent() {
       <header class="shrink-0 h-12 flex items-center justify-between px-4 border-b border-primary/10 bg-base-200/30 backdrop-blur-sm">
         <div class="flex items-center gap-2">
           <span class="font-heading text-lg font-semibold text-primary">
-            Vivamark
+            MyMark
           </span>
         </div>
         <div class="flex items-center gap-2">

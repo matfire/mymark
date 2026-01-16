@@ -5,10 +5,10 @@ import { useSelectedFile } from "../contexts/selected-file";
 import { getSelectedNote } from "../utils/note-utils";
 
 export const useSelectedNote = (docUrl: AutomergeUrl) => {
-  const [selectedFileId] = useSelectedFile();
-  const [doc] = useDocument<Workspace>(() => docUrl);
+	const [selectedFileId] = useSelectedFile();
+	const [doc] = useDocument<Workspace>(() => docUrl);
 
-  const selectedNote = () => getSelectedNote(doc(), selectedFileId());
+	const selectedNote = () => getSelectedNote(doc(), selectedFileId());
 
-  return selectedNote;
+	return selectedNote;
 };

@@ -51,8 +51,8 @@ function LoginPage() {
   return (
     <div class="flex min-h-screen items-center justify-center bg-atmospheric-auth p-4 relative overflow-hidden">
       {/* Animated gradient orb */}
-      <div class="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/10 rounded-full blur-3xl animate-gradient-orb" />
+      <div class="absolute top-1/2 left-1/2 w-150 h-150 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+        <div class="absolute inset-0 bg-linear-to-br from-primary/20 via-secondary/10 to-accent/10 rounded-full blur-3xl animate-gradient-orb" />
       </div>
 
       <div class="w-full max-w-md relative z-10">
@@ -60,9 +60,11 @@ function LoginPage() {
           <div class="p-8">
             {/* Header */}
             <div class="text-center mb-6  ">
-              <h1 class="font-heading text-3xl font-semibold text-base-content">Welcome back</h1>
+              <h1 class="font-heading text-3xl font-semibold text-base-content">
+                Welcome back
+              </h1>
               <p class="text-base-content/50 mt-2">
-                Sign in to your Vivamark account
+                Sign in to your MyMark account
               </p>
             </div>
 
@@ -166,27 +168,20 @@ function LoginPage() {
                   />
                 </svg>
                 Continue with Google
-                <span class="badge badge-sm bg-base-300/50 border-primary/20 text-primary/80">Soon</span>
+                <span class="badge badge-sm bg-base-300/50 border-primary/20 text-primary/80">
+                  Soon
+                </span>
               </button>
             </div>
-
-            {/* Terms Notice */}
-            <p class="text-center text-xs text-base-content/40 mt-6  ">
-              By continuing, you agree to our{" "}
-              <a href="/terms" class="link link-primary hover:text-primary">
-                Terms of Service
-              </a>{" "}
-              and{" "}
-              <a href="/privacy" class="link link-primary hover:text-primary">
-                Privacy Policy
-              </a>
-            </p>
 
             {/* Sign Up Link */}
             <div class="divider my-6" />
             <p class="text-center text-sm text-base-content/70  ">
               Don't have an account?{" "}
-              <Link to="/register" class="link link-primary font-medium hover:text-primary">
+              <Link
+                to="/register"
+                class="link link-primary font-medium hover:text-primary"
+              >
                 Sign up
               </Link>
             </p>
