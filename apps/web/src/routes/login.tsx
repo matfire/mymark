@@ -24,7 +24,7 @@ function LoginPage() {
         setError(result.error.message || "Failed to sign in with passkey.");
         setIsLoading(null);
       } else {
-        await navigate({ to: "/" });
+        await navigate({ to: "/sync" });
       }
     } catch (err) {
       setError("Failed to sign in with passkey. Please try again.");
