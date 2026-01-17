@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@automerge/automerge-repo": "catalog:",
-    "@automerge/automerge-repo-network-broadcastchannel": "catalog:",
     "@automerge/automerge-repo-network-websocket": "catalog:",
     "@automerge/automerge-repo-solid-primitives": "catalog:",
     "@automerge/automerge-repo-storage-indexeddb": "catalog:",

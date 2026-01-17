@@ -151,7 +151,9 @@ function RouteComponent() {
       </div>
 
       {/* Sync status indicator */}
-      <SyncStatus />
+      <Show when={doc()?.doneLoading}>
+        <SyncStatus doc={doc()!} />
+      </Show>
     </div>
   );
 }

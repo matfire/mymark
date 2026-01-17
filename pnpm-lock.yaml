@@ -9,9 +9,6 @@ catalogs:
     '@automerge/automerge-repo':
       specifier: ^2.5.2-alpha.1
       version: 2.5.2-alpha.1
-    '@automerge/automerge-repo-network-broadcastchannel':
-      specifier: ^2.5.2-alpha.1
-      version: 2.5.2-alpha.1
     '@automerge/automerge-repo-network-websocket':
       specifier: ^2.5.2-alpha.1
       version: 2.5.2-alpha.1
@@ -125,9 +122,6 @@ importers:
   apps/web:
     dependencies:
       '@automerge/automerge-repo':
-        specifier: 'catalog:'
-        version: 2.5.2-alpha.1
-      '@automerge/automerge-repo-network-broadcastchannel':
         specifier: 'catalog:'
         version: 2.5.2-alpha.1
       '@automerge/automerge-repo-network-websocket':
@@ -281,9 +275,6 @@ importers:
         version: 5.9.3
 
 packages:
-
-  '@automerge/automerge-repo-network-broadcastchannel@2.5.2-alpha.1':
-    resolution: {integrity: sha512-mwWzFMscGr1OGnVxlrO/I1mMpcLPir5NoWqbl1XJa+G9SuLWV1aaqxPSkonCZ90VnYnFjOkV+AABOjDgBsVQLQ==}
 
   '@automerge/automerge-repo-network-websocket@2.5.2-alpha.1':
     resolution: {integrity: sha512-DDW32jHeOex7N5y0bYhL3WpcfMUW+MxQuAAEiX6Oa42MNmREXNgJw/cZV+rvSH3JE/yKrxVPInFP6BRBq8TuNw==}
@@ -2718,12 +2709,6 @@ packages:
     resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
 
 snapshots:
-
-  '@automerge/automerge-repo-network-broadcastchannel@2.5.2-alpha.1':
-    dependencies:
-      '@automerge/automerge-repo': 2.5.2-alpha.1
-    transitivePeerDependencies:
-      - supports-color
 
   '@automerge/automerge-repo-network-websocket@2.5.2-alpha.1':
     dependencies:
