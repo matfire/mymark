@@ -12,6 +12,7 @@ function LoginPage() {
     "github" | "google" | "passkey" | null
   >(null);
   const [error, setError] = createSignal<string | null>(null);
+  const navigate = Route.useNavigate();
 
   const handlePasskeySignIn = async () => {
     setIsLoading("passkey");
@@ -22,6 +23,8 @@ function LoginPage() {
       if (result?.error) {
         setError(result.error.message || "Failed to sign in with passkey.");
         setIsLoading(null);
+      } else {
+        await navigate({ to: "/" });
       }
     } catch (err) {
       setError("Failed to sign in with passkey. Please try again.");
