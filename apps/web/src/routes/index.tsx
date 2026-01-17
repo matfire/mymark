@@ -1,16 +1,18 @@
 import {
   RepoContext,
   useDocHandle,
+  useDocument,
 } from "@automerge/automerge-repo-solid-primitives";
 import { createFileRoute, Link } from "@tanstack/solid-router";
 import { getOrCreateRoot } from "../sync/utils";
 import { FileTree } from "../components/file-tree";
 import type { Workspace } from "@mymark/common/repo";
-import { Show, useContext } from "solid-js";
+import { Show, useContext, createSignal } from "solid-js";
 import { useSelectedFile } from "../contexts/selected-file";
 import { Editor } from "../components/editor";
 import { authClient } from "../lib/auth-client";
-import { FiUser, FiLogIn, FiFileText } from "solid-icons/fi";
+import { FiUser, FiLogIn, FiFileText, FiDownload } from "solid-icons/fi";
+import { downloadWorkspace } from "../utils/export-utils";
 import { SyncStatus } from "../components/sync-status";
 
 export const Route = createFileRoute("/")({
@@ -19,9 +21,24 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
   const repo = useContext(RepoContext);
-  const doc = useDocHandle<Workspace>(getOrCreateRoot(repo!));
+  const docUrl = getOrCreateRoot(repo!);
+  const doc = useDocHandle<Workspace>(docUrl);
+  const [workspace] = useDocument<Workspace>(() => doc()?.url);
   const [selectedFileId] = useSelectedFile();
   const session = authClient.useSession();
+  const [isExporting, setIsExporting] = createSignal(false);
+
+  const handleExport = async () => {
+    const ws = workspace();
+    if (!ws || isExporting()) return;
+
+    setIsExporting(true);
+    try {
+      await downloadWorkspace(ws);
+    } finally {
+      setIsExporting(false);
+    }
+  };
 
   return (
     <div class="flex flex-col h-screen bg-atmospheric">
@@ -33,6 +50,23 @@ function RouteComponent() {
           </span>
         </div>
         <div class="flex items-center gap-2">
+          <Show when={doc()?.doneLoading}>
+            <button
+              type="button"
+              onClick={handleExport}
+              disabled={isExporting()}
+              class="btn btn-ghost btn-sm gap-2 text-base-content/70 hover:text-primary"
+              title="Export workspace as ZIP"
+            >
+              <Show
+                when={!isExporting()}
+                fallback={<span class="loading loading-spinner loading-xs" />}
+              >
+                <FiDownload size={16} />
+              </Show>
+              <span class="hidden sm:inline">Export</span>
+            </button>
+          </Show>
           <Show
             when={session()?.data?.user}
             fallback={
