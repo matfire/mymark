@@ -1,36 +1,36 @@
 {
-  "name": "@mymark/db",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "db:push": "drizzle-kit push",
-    "lint": "biome check",
-    "lint:fix": "pnpm lint --write"
-  },
-  "type": "module",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.27.0",
-  "dependencies": {
-    "dotenv": "catalog:",
-    "drizzle-orm": "^0.45.1",
-    "pg": "^8.16.3"
-  },
-  "devDependencies": {
-    "@types/pg": "^8.16.0",
-    "drizzle-kit": "^0.31.8",
-    "@mymark/config": "workspace:*",
-    "@biomejs/biome": "catalog:"
-  },
-  "exports": {
-    ".": {
-      "default": "./src/index.ts"
-    },
-    "./schema": {
-      "default": "./src/schemas/index.ts"
-    }
-  }
+	"name": "@mymark/db",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"db:push": "drizzle-kit push",
+		"lint": "biome check",
+		"lint:fix": "pnpm lint --write"
+	},
+	"type": "module",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.27.0",
+	"dependencies": {
+		"dotenv": "catalog:",
+		"drizzle-orm": "^0.45.1",
+		"pg": "^8.16.3"
+	},
+	"devDependencies": {
+		"@types/pg": "^8.16.0",
+		"drizzle-kit": "^0.31.8",
+		"@mymark/config": "workspace:*",
+		"@biomejs/biome": "catalog:"
+	},
+	"exports": {
+		".": {
+			"default": "./src/index.ts"
+		},
+		"./schema": {
+			"default": "./src/schemas/index.ts"
+		}
+	}
 }
