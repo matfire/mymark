@@ -6,6 +6,21 @@ settings:
 
 catalogs:
   default:
+    '@automerge/automerge-repo':
+      specifier: ^2.5.2-alpha.1
+      version: 2.5.2-alpha.1
+    '@automerge/automerge-repo-network-broadcastchannel':
+      specifier: ^2.5.2-alpha.1
+      version: 2.5.2-alpha.1
+    '@automerge/automerge-repo-network-websocket':
+      specifier: ^2.5.2-alpha.1
+      version: 2.5.2-alpha.1
+    '@automerge/automerge-repo-solid-primitives':
+      specifier: ^2.5.2-alpha.1
+      version: 2.5.2-alpha.1
+    '@automerge/automerge-repo-storage-indexeddb':
+      specifier: ^2.5.2-alpha.1
+      version: 2.5.2-alpha.1
     '@better-auth/passkey':
       specifier: ^1.4.13
       version: 1.4.13
@@ -33,17 +48,17 @@ importers:
         specifier: 'catalog:'
         version: 2.3.11
       turbo:
-        specifier: ^2.7.4
-        version: 2.7.4
+        specifier: ^2.7.5
+        version: 2.7.5
 
   apps/api:
     dependencies:
       '@automerge/automerge-repo':
-        specifier: ^2.5.1
-        version: 2.5.1
+        specifier: 'catalog:'
+        version: 2.5.2-alpha.1
       '@automerge/automerge-repo-network-websocket':
-        specifier: ^2.5.1
-        version: 2.5.1
+        specifier: 'catalog:'
+        version: 2.5.2-alpha.1
       '@better-auth/passkey':
         specifier: ^1.4.13
         version: 1.4.13(@better-auth/core@1.4.13(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.7(zod@4.3.5))(jose@6.1.3)(kysely@0.28.9)(nanostores@1.1.0))(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-auth@1.4.13(drizzle-kit@0.31.8)(drizzle-orm@0.45.1(@types/pg@8.16.0)(kysely@0.28.9)(pg@8.16.3))(pg@8.16.3)(solid-js@1.9.10))(better-call@1.1.7(zod@4.3.5))(nanostores@1.1.0)
@@ -110,20 +125,20 @@ importers:
   apps/web:
     dependencies:
       '@automerge/automerge-repo':
-        specifier: ^2.5.1
-        version: 2.5.1
+        specifier: 'catalog:'
+        version: 2.5.2-alpha.1
       '@automerge/automerge-repo-network-broadcastchannel':
-        specifier: ^2.5.1
-        version: 2.5.1
+        specifier: 'catalog:'
+        version: 2.5.2-alpha.1
       '@automerge/automerge-repo-network-websocket':
-        specifier: ^2.5.1
-        version: 2.5.1
+        specifier: 'catalog:'
+        version: 2.5.2-alpha.1
       '@automerge/automerge-repo-solid-primitives':
-        specifier: ^2.5.1
-        version: 2.5.1(@automerge/automerge@3.2.2)(solid-js@1.9.10)
+        specifier: 'catalog:'
+        version: 2.5.2-alpha.1(@automerge/automerge@3.2.2)(solid-js@1.9.10)
       '@automerge/automerge-repo-storage-indexeddb':
-        specifier: ^2.5.1
-        version: 2.5.1
+        specifier: 'catalog:'
+        version: 2.5.2-alpha.1
       '@better-auth/passkey':
         specifier: 'catalog:'
         version: 1.4.13(@better-auth/core@1.4.13(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.7(zod@4.3.5))(jose@6.1.3)(kysely@0.28.9)(nanostores@1.1.0))(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-auth@1.4.13(drizzle-kit@0.31.8)(drizzle-orm@0.45.1(@types/pg@8.16.0)(kysely@0.28.9)(pg@8.16.3))(pg@8.16.3)(solid-js@1.9.10))(better-call@1.1.7(zod@4.3.5))(nanostores@1.1.0)
@@ -267,23 +282,23 @@ importers:
 
 packages:
 
-  '@automerge/automerge-repo-network-broadcastchannel@2.5.1':
-    resolution: {integrity: sha512-htjVAPOzWvaal7jXkXhMBWW1OLHBAmGJp3fujdxgMmHa6/KUmhmHsn7VGvVqrU3vCfbfdu5PAupcla95AwlEbA==}
+  '@automerge/automerge-repo-network-broadcastchannel@2.5.2-alpha.1':
+    resolution: {integrity: sha512-mwWzFMscGr1OGnVxlrO/I1mMpcLPir5NoWqbl1XJa+G9SuLWV1aaqxPSkonCZ90VnYnFjOkV+AABOjDgBsVQLQ==}
 
-  '@automerge/automerge-repo-network-websocket@2.5.1':
-    resolution: {integrity: sha512-urvhlmTZ6VoJi5o0T2mtkVd4X1cuUdBC5/C/UY5FFgWczEq7PwCdNhUndv1CQSn8ePPsT59z7ZnRzZJbqqu22Q==}
+  '@automerge/automerge-repo-network-websocket@2.5.2-alpha.1':
+    resolution: {integrity: sha512-DDW32jHeOex7N5y0bYhL3WpcfMUW+MxQuAAEiX6Oa42MNmREXNgJw/cZV+rvSH3JE/yKrxVPInFP6BRBq8TuNw==}
 
-  '@automerge/automerge-repo-solid-primitives@2.5.1':
-    resolution: {integrity: sha512-60J/GDqZb7wSf1H1cZ7LvEP6YGBEOtUYYjSp7cvJw41k/VxU4n6n/qSgI53Fs0rJOH6C22Kmi5hoxMve43lGLw==}
+  '@automerge/automerge-repo-solid-primitives@2.5.2-alpha.1':
+    resolution: {integrity: sha512-+qudUtmI2H2lbZx6Xja4ZyD5D8nDnqugu2v/fL9HmtZ6GYoqRP1duAtHHxgxy+jh0/8OvBoNVjaek97z7Z4ijQ==}
     peerDependencies:
       '@automerge/automerge': ^3.0.0
       solid-js: ^1.9.4
 
-  '@automerge/automerge-repo-storage-indexeddb@2.5.1':
-    resolution: {integrity: sha512-klyemjiwEn2+PW+NTjvBtjmykjJVoaBbQgk5P02jIgvAO7KH8OACldFzPrJdO0o6WAxkiOdtte8RHFKrDPkBlw==}
+  '@automerge/automerge-repo-storage-indexeddb@2.5.2-alpha.1':
+    resolution: {integrity: sha512-mKuXO9E5wlI6LWGJQFNJgfcCHuW4uQKtFDcxStCv6dRA9eLcD2+YfK6IWBhT8HDkG0FulJ6yvzd3b3DvyUpCeQ==}
 
-  '@automerge/automerge-repo@2.5.1':
-    resolution: {integrity: sha512-w242TXb2TaGHFux7dDtJIUVJMqSSq1iYvNia8FVYgVTUDvbm8chaGMe1kVdKMEINFiB/BNYPtsoJIPjJhQArLg==}
+  '@automerge/automerge-repo@2.5.2-alpha.1':
+    resolution: {integrity: sha512-8eWgWrKjX8P9PpnxQG/dn+Cufb/MUYI2Pb7tG8Pvqip+3SpgX7EYCWT7FgAmRcFljq54fTXeB2KWuZD76JvLQw==}
 
   '@automerge/automerge@3.2.2':
     resolution: {integrity: sha512-A6E2MDnX+IWmFV2GydrkJEf4ClO2hucROJkGmX3bWYoZfgvmCz3QFqew126/uXQAJxWq8WMFf34PuKa7c/cJfg==}
@@ -2526,38 +2541,38 @@ packages:
     resolution: {integrity: sha512-axr3IdNuVIxnaK5XGEUFTu3YmAQ6lllgrvqfEoR16g/HGnYY/6We4oWENtAnzK6/LpJ2ur9PAb80RBt7/U4ugw==}
     engines: {node: '>= 6.0.0'}
 
-  turbo-darwin-64@2.7.4:
-    resolution: {integrity: sha512-xDR30ltfkSsRfGzABBckvl1nz1cZ3ssTujvdj+TPwOweeDRvZ0e06t5DS0rmRBvyKpgGs42K/EK6Mn2qLlFY9A==}
+  turbo-darwin-64@2.7.5:
+    resolution: {integrity: sha512-nN3wfLLj4OES/7awYyyM7fkU8U8sAFxsXau2bYJwAWi6T09jd87DgHD8N31zXaJ7LcpyppHWPRI2Ov9MuZEwnQ==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.7.4:
-    resolution: {integrity: sha512-P7sjqXtOL/+nYWPvcDGWhi8wf8M8mZHHB8XEzw2VX7VJrS8IGHyJHGD1AYfDvhAEcr7pnk3gGifz3/xyhI655w==}
+  turbo-darwin-arm64@2.7.5:
+    resolution: {integrity: sha512-wCoDHMiTf3FgLAbZHDDx/unNNonSGhsF5AbbYODbxnpYyoKDpEYacUEPjZD895vDhNvYCH0Nnk24YsP4n/cD6g==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.7.4:
-    resolution: {integrity: sha512-GofFOxRO/IhG8BcPyMSSB3Y2+oKQotsaYbHxL9yD6JPb20/o35eo+zUSyazOtilAwDHnak5dorAJFoFU8MIg2A==}
+  turbo-linux-64@2.7.5:
+    resolution: {integrity: sha512-KKPvhOmJMmzWj/yjeO4LywkQ85vOJyhru7AZk/+c4B6OUh/odQ++SiIJBSbTG2lm1CuV5gV5vXZnf/2AMlu3Zg==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.7.4:
-    resolution: {integrity: sha512-+RQKgNjksVPxYAyAgmDV7w/1qj++qca+nSNTAOKGOfJiDtSvRKoci89oftJ6anGs00uamLKVEQ712TI/tfNAIw==}
+  turbo-linux-arm64@2.7.5:
+    resolution: {integrity: sha512-8PIva4L6BQhiPikUTds9lSFSHXVDAsEvV6QUlgwPsXrtXVQMVi6Sv9p+IxtlWQFvGkdYJUgX9GnK2rC030Xcmw==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.7.4:
-    resolution: {integrity: sha512-rfak1+g+ON3czs1mDYsCS4X74ZmK6gOgRQTXjDICtzvR4o61paqtgAYtNPofcVsMWeF4wvCajSeoAkkeAnQ1kg==}
+  turbo-windows-64@2.7.5:
+    resolution: {integrity: sha512-rupskv/mkIUgQXzX/wUiK00mKMorQcK8yzhGFha/D5lm05FEnLx8dsip6rWzMcVpvh+4GUMA56PgtnOgpel2AA==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.7.4:
-    resolution: {integrity: sha512-1ZgBNjNRbDu/fPeqXuX9i26x3CJ/Y1gcwUpQ+Vp7kN9Un6RZ9kzs164f/knrjcu5E+szCRexVjRSJay1k5jApA==}
+  turbo-windows-arm64@2.7.5:
+    resolution: {integrity: sha512-G377Gxn6P42RnCzfMyDvsqQV7j69kVHKlhz9J4RhtJOB5+DyY4yYh/w0oTIxZQ4JRMmhjwLu3w9zncMoQ6nNDw==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.7.4:
-    resolution: {integrity: sha512-bkO4AddmDishzJB2ze7aYYPaejMoJVfS0XnaR6RCdXFOY8JGJfQE+l9fKiV7uDPa5Ut44gmOWJL3894CIMeH9g==}
+  turbo@2.7.5:
+    resolution: {integrity: sha512-7Imdmg37joOloTnj+DPrab9hIaQcDdJ5RwSzcauo/wMOSAgO+A/I/8b3hsGGs6PWQz70m/jkPgdqWsfNKtwwDQ==}
     hasBin: true
 
   type-fest@5.4.1:
@@ -2704,15 +2719,15 @@ packages:
 
 snapshots:
 
-  '@automerge/automerge-repo-network-broadcastchannel@2.5.1':
+  '@automerge/automerge-repo-network-broadcastchannel@2.5.2-alpha.1':
     dependencies:
-      '@automerge/automerge-repo': 2.5.1
+      '@automerge/automerge-repo': 2.5.2-alpha.1
     transitivePeerDependencies:
       - supports-color
 
-  '@automerge/automerge-repo-network-websocket@2.5.1':
+  '@automerge/automerge-repo-network-websocket@2.5.2-alpha.1':
     dependencies:
-      '@automerge/automerge-repo': 2.5.1
+      '@automerge/automerge-repo': 2.5.2-alpha.1
       cbor-x: 1.6.0
       debug: 4.4.3
       eventemitter3: 5.0.1
@@ -2723,18 +2738,18 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@automerge/automerge-repo-solid-primitives@2.5.1(@automerge/automerge@3.2.2)(solid-js@1.9.10)':
+  '@automerge/automerge-repo-solid-primitives@2.5.2-alpha.1(@automerge/automerge@3.2.2)(solid-js@1.9.10)':
     dependencies:
       '@automerge/automerge': 3.2.2
       solid-js: 1.9.10
 
-  '@automerge/automerge-repo-storage-indexeddb@2.5.1':
+  '@automerge/automerge-repo-storage-indexeddb@2.5.2-alpha.1':
     dependencies:
-      '@automerge/automerge-repo': 2.5.1
+      '@automerge/automerge-repo': 2.5.2-alpha.1
     transitivePeerDependencies:
       - supports-color
 
-  '@automerge/automerge-repo@2.5.1':
+  '@automerge/automerge-repo@2.5.2-alpha.1':
     dependencies:
       '@automerge/automerge': 3.2.2
       bs58check: 3.0.1
@@ -4767,32 +4782,32 @@ snapshots:
     dependencies:
       tslib: 1.14.1
 
-  turbo-darwin-64@2.7.4:
+  turbo-darwin-64@2.7.5:
     optional: true
 
-  turbo-darwin-arm64@2.7.4:
+  turbo-darwin-arm64@2.7.5:
     optional: true
 
-  turbo-linux-64@2.7.4:
+  turbo-linux-64@2.7.5:
     optional: true
 
-  turbo-linux-arm64@2.7.4:
+  turbo-linux-arm64@2.7.5:
     optional: true
 
-  turbo-windows-64@2.7.4:
+  turbo-windows-64@2.7.5:
     optional: true
 
-  turbo-windows-arm64@2.7.4:
+  turbo-windows-arm64@2.7.5:
     optional: true
 
-  turbo@2.7.4:
+  turbo@2.7.5:
     optionalDependencies:
-      turbo-darwin-64: 2.7.4
-      turbo-darwin-arm64: 2.7.4
-      turbo-linux-64: 2.7.4
-      turbo-linux-arm64: 2.7.4
-      turbo-windows-64: 2.7.4
-      turbo-windows-arm64: 2.7.4
+      turbo-darwin-64: 2.7.5
+      turbo-darwin-arm64: 2.7.5
+      turbo-linux-64: 2.7.5
+      turbo-linux-arm64: 2.7.5
+      turbo-windows-64: 2.7.5
+      turbo-windows-arm64: 2.7.5
 
   type-fest@5.4.1:
     dependencies:

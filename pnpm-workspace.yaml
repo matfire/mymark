@@ -3,12 +3,17 @@ packages:
   - packages/*
 
 catalog:
-  "@better-auth/passkey": ^1.4.13
+  '@automerge/automerge-repo': ^2.5.2-alpha.1
+  '@automerge/automerge-repo-network-broadcastchannel': ^2.5.2-alpha.1
+  '@automerge/automerge-repo-network-websocket': ^2.5.2-alpha.1
+  '@automerge/automerge-repo-solid-primitives': ^2.5.2-alpha.1
+  '@automerge/automerge-repo-storage-indexeddb': ^2.5.2-alpha.1
+  '@better-auth/passkey': ^1.4.13
+  '@biomejs/biome': 2.3.11
   better-auth: ^1.4.13
-  drizzle-orm: ^0.45.1
   dotenv: ^17.2.3
-  typescript: "~5.9.3"
-  "@biomejs/biome": 2.3.11
+  drizzle-orm: ^0.45.1
+  typescript: ~5.9.3
 
 onlyBuiltDependencies:
   - cbor-extract
