@@ -23,13 +23,14 @@
     "@codemirror/search": "^6.6.0",
     "@codemirror/state": "^6.5.4",
     "@codemirror/view": "^6.39.11",
+    "@lezer/highlight": "^1.2.3",
+    "@mymark/common": "workspace:*",
+    "@mymark/orpc": "workspace:*",
     "@orpc/client": "^1.13.4",
     "@orpc/contract": "^1.13.4",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/solid-router": "^1.150.0",
     "@tanstack/solid-router-devtools": "^1.150.0",
-    "@mymark/common": "workspace:*",
-    "@mymark/orpc": "workspace:*",
     "better-auth": "catalog:",
     "jszip": "^3.10.1",
     "solid-icons": "^1.1.0",
@@ -37,13 +38,13 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@tanstack/router-plugin": "^1.150.0",
     "@types/node": "^24.10.8",
     "daisyui": "^5.5.14",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-solid": "^2.11.10",
-    "vite-plugin-wasm": "^3.5.0",
-    "@biomejs/biome": "catalog:"
+    "vite-plugin-wasm": "^3.5.0"
   }
 }
