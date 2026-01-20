@@ -85,10 +85,13 @@ function createThemeExtension() {
 }
 
 /**
- * Custom highlight style for markdown headings with warm graduated amber colors.
- * H1 is full amber, progressively muted for lower heading levels.
+ * Custom highlight style for markdown elements optimized for the dark theme.
+ * Extends defaultHighlightStyle with custom heading colors and readable link styling.
  */
-const headingHighlightStyle = HighlightStyle.define([
+const markdownHighlightStyle = HighlightStyle.define([
+  // Include all default styles as a base
+  ...defaultHighlightStyle.specs,
+  // Override with custom markdown styles
   {
     tag: tags.heading1,
     fontSize: "1.75rem",
@@ -142,6 +145,22 @@ const headingHighlightStyle = HighlightStyle.define([
     tag: tags.processingInstruction,
     color: "rgba(212, 165, 116, 0.4)",
   },
+  // Link text styling - info blue for readability on dark background
+  {
+    tag: tags.link,
+    color: "#7da4c9",
+    textDecoration: "none",
+  },
+  // URL styling - muted info blue for the URL portion
+  {
+    tag: tags.url,
+    color: "rgba(125, 164, 201, 0.7)",
+  },
+  // Label name styling (used for link labels)
+  {
+    tag: tags.labelName,
+    color: "rgba(125, 164, 201, 0.7)",
+  },
 ]);
 
 export function createCodeMirror(
@@ -171,8 +190,7 @@ export function createCodeMirror(
         dropCursor(),
         EditorState.allowMultipleSelections.of(true),
         indentOnInput(),
-        syntaxHighlighting(defaultHighlightStyle),
-        syntaxHighlighting(headingHighlightStyle),
+        syntaxHighlighting(markdownHighlightStyle),
         bracketMatching(),
         closeBrackets(),
         autocompletion(),
