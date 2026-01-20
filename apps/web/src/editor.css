@@ -3,341 +3,341 @@
    ===================================================== */
 
 .cm-editor {
-  background-color: transparent;
-  color: var(--color-base-content);
-  border: none;
-  border-radius: 0;
-  font-family: "Literata", Georgia, serif;
-  font-size: 1rem;
-  line-height: 1.75;
-  height: 100%;
+    background-color: transparent;
+    color: var(--color-base-content);
+    border: none;
+    border-radius: 0;
+    font-family: "Literata", Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    height: 100%;
 }
 
 .cm-editor.cm-focused {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 
 /* Scroller and scrollbars */
 .cm-editor .cm-scroller {
-  overflow: auto;
+    overflow: auto;
 }
 
 .cm-editor .cm-scroller::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+    width: 6px;
+    height: 6px;
 }
 
 .cm-editor .cm-scroller::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 .cm-editor .cm-scroller::-webkit-scrollbar-thumb {
-  background: rgba(212, 165, 116, 0.15);
-  border-radius: 3px;
+    background: rgba(212, 165, 116, 0.15);
+    border-radius: 3px;
 }
 
 .cm-editor .cm-scroller::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 165, 116, 0.25);
+    background: rgba(212, 165, 116, 0.25);
 }
 
 /* Content area */
 .cm-editor .cm-content {
-  padding: 1.5rem 2rem;
-  min-height: 100%;
-  caret-color: #d4a574;
+    padding: 1.5rem 2rem;
+    min-height: 100%;
+    caret-color: #d4a574;
 }
 
 .cm-editor .cm-line {
-  padding: 0.125rem 0;
+    padding: 0.125rem 0;
 }
 
 /* Line numbers - very muted */
 .cm-editor .cm-lineNumbers .cm-gutterElement {
-  color: rgba(212, 165, 116, 0.2);
-  padding-right: 1rem;
-  text-align: right;
-  user-select: none;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
+    color: rgba(212, 165, 116, 0.2);
+    padding-right: 1rem;
+    text-align: right;
+    user-select: none;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
 }
 
 .cm-editor .cm-lineNumbers {
-  background: transparent;
-  border-right: none;
+    background: transparent;
+    border-right: none;
 }
 
 /* Active line - subtle highlight */
 .cm-editor .cm-activeLine {
-  background: rgba(212, 165, 116, 0.03);
+    background: rgba(212, 165, 116, 0.03);
 }
 
 .cm-editor .cm-activeLineGutter {
-  background: transparent;
-  border-right: none;
+    background: transparent;
+    border-right: none;
 }
 
 .cm-editor .cm-activeLineGutter .cm-gutterElement {
-  color: rgba(212, 165, 116, 0.4);
+    color: rgba(212, 165, 116, 0.4);
 }
 
 /* Selection - soft amber tint */
 .cm-editor .cm-selectionBackground {
-  background: rgba(212, 165, 116, 0.15) !important;
+    background: rgba(212, 165, 116, 0.15) !important;
 }
 
 .cm-editor ::selection {
-  background: rgba(212, 165, 116, 0.15);
+    background: rgba(212, 165, 116, 0.15);
 }
 
 .cm-editor .cm-selectionMatch {
-  background: rgba(139, 127, 168, 0.15);
-  border-radius: 2px;
+    background: rgba(139, 127, 168, 0.15);
+    border-radius: 2px;
 }
 
 /* Cursor - warm amber */
 .cm-editor .cm-cursor {
-  border-left: 2px solid #d4a574;
+    border-left: 2px solid #d4a574;
 }
 
 .cm-editor .cm-cursor-primary {
-  border-left-color: #d4a574;
+    border-left-color: #d4a574;
 }
 
 /* Fold placeholder */
 .cm-editor .cm-foldPlaceholder {
-  background: rgba(212, 165, 116, 0.1);
-  border: 1px solid rgba(212, 165, 116, 0.2);
-  color: rgba(212, 165, 116, 0.6);
-  border-radius: 4px;
-  padding: 0 6px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
+    background: rgba(212, 165, 116, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    color: rgba(212, 165, 116, 0.6);
+    border-radius: 4px;
+    padding: 0 6px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
 }
 
 /* Fold gutter */
 .cm-editor .cm-foldGutter span {
-  color: rgba(212, 165, 116, 0.3);
-  padding: 0 4px;
-  cursor: pointer;
-  transition: color 0.15s ease;
+    color: rgba(212, 165, 116, 0.3);
+    padding: 0 4px;
+    cursor: pointer;
+    transition: color 0.15s ease;
 }
 
 .cm-editor .cm-foldGutter span:hover {
-  color: rgba(212, 165, 116, 0.6);
+    color: rgba(212, 165, 116, 0.6);
 }
 
 /* Search panel */
 .cm-editor .cm-panel {
-  background: rgba(26, 22, 24, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 165, 116, 0.15);
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  color: var(--color-base-content);
-  font-family: "Literata", Georgia, serif;
+    background: rgba(26, 22, 24, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    color: var(--color-base-content);
+    font-family: "Literata", Georgia, serif;
 }
 
 .cm-editor .cm-panel.cm-search {
-  padding: 0.75rem;
+    padding: 0.75rem;
 }
 
 .cm-editor .cm-panel.cm-search input[type="text"],
 .cm-editor .cm-panel .cm-textfield {
-  background: rgba(37, 31, 40, 0.8);
-  border: 1px solid rgba(212, 165, 116, 0.2);
-  color: var(--color-base-content);
-  border-radius: 6px;
-  padding: 0.375rem 0.75rem;
-  font-size: 0.875rem;
-  font-family: "Literata", Georgia, serif;
-  transition: border-color 0.15s ease;
+    background: rgba(37, 31, 40, 0.8);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    color: var(--color-base-content);
+    border-radius: 6px;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    font-family: "Literata", Georgia, serif;
+    transition: border-color 0.15s ease;
 }
 
 .cm-editor .cm-panel.cm-search input[type="text"]:focus,
 .cm-editor .cm-panel .cm-textfield:focus {
-  outline: none;
-  border-color: rgba(212, 165, 116, 0.4);
-  box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.1);
+    outline: none;
+    border-color: rgba(212, 165, 116, 0.4);
+    box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.1);
 }
 
 .cm-editor .cm-panel button {
-  background: rgba(37, 31, 40, 0.6);
-  border: 1px solid rgba(212, 165, 116, 0.15);
-  color: var(--color-base-content);
-  border-radius: 6px;
-  padding: 0.375rem 0.75rem;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: all 0.15s ease;
+    background: rgba(37, 31, 40, 0.6);
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    color: var(--color-base-content);
+    border-radius: 6px;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
 }
 
 .cm-editor .cm-panel button:hover {
-  background: rgba(212, 165, 116, 0.15);
-  border-color: rgba(212, 165, 116, 0.3);
+    background: rgba(212, 165, 116, 0.15);
+    border-color: rgba(212, 165, 116, 0.3);
 }
 
 .cm-editor .cm-panel button[name="close"] {
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  color: rgba(212, 165, 116, 0.6);
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: rgba(212, 165, 116, 0.6);
 }
 
 .cm-editor .cm-panel button[name="close"]:hover {
-  background: rgba(212, 165, 116, 0.15);
-  color: #d4a574;
+    background: rgba(212, 165, 116, 0.15);
+    color: #d4a574;
 }
 
 /* Tooltips and autocomplete */
 .cm-editor .cm-tooltip {
-  border: 1px solid rgba(212, 165, 116, 0.15);
-  background: rgba(26, 22, 24, 0.95);
-  backdrop-filter: blur(12px);
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  color: var(--color-base-content);
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    background: rgba(26, 22, 24, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    color: var(--color-base-content);
 }
 
 .cm-editor .cm-tooltip-autocomplete ul {
-  font-family: "Literata", Georgia, serif;
-  max-height: 240px;
-  overflow-y: auto;
+    font-family: "Literata", Georgia, serif;
+    max-height: 240px;
+    overflow-y: auto;
 }
 
 .cm-editor .cm-tooltip-autocomplete ul::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 
 .cm-editor .cm-tooltip-autocomplete ul::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 .cm-editor .cm-tooltip-autocomplete ul::-webkit-scrollbar-thumb {
-  background: rgba(212, 165, 116, 0.2);
-  border-radius: 3px;
+    background: rgba(212, 165, 116, 0.2);
+    border-radius: 3px;
 }
 
 .cm-editor .cm-tooltip-autocomplete ul li {
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  border-radius: 4px;
-  margin: 2px 4px;
-  transition: background 0.1s ease;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 2px 4px;
+    transition: background 0.1s ease;
 }
 
 .cm-editor .cm-tooltip-autocomplete ul li[aria-selected] {
-  background: rgba(212, 165, 116, 0.2);
-  color: var(--color-base-content);
+    background: rgba(212, 165, 116, 0.2);
+    color: var(--color-base-content);
 }
 
 .cm-editor .cm-tooltip-autocomplete ul li:hover:not([aria-selected]) {
-  background: rgba(212, 165, 116, 0.1);
+    background: rgba(212, 165, 116, 0.1);
 }
 
 .cm-editor .cm-completionLabel {
-  color: inherit;
+    color: inherit;
 }
 
 .cm-editor .cm-completionDetail {
-  color: rgba(139, 127, 168, 0.8);
-  margin-left: 0.75rem;
-  font-style: italic;
+    color: rgba(139, 127, 168, 0.8);
+    margin-left: 0.75rem;
+    font-style: italic;
 }
 
 .cm-editor .cm-completionIcon {
-  color: rgba(212, 165, 116, 0.6);
+    color: rgba(212, 165, 116, 0.6);
 }
 
 /* Diagnostics */
 .cm-editor .cm-diagnostic {
-  border-left: 2px solid #c97d7d;
-  padding-left: 0.5rem;
-  background: rgba(201, 125, 125, 0.05);
+    border-left: 2px solid #c97d7d;
+    padding-left: 0.5rem;
+    background: rgba(201, 125, 125, 0.05);
 }
 
 .cm-editor .cm-diagnostic-error {
-  border-left-color: #c97d7d;
+    border-left-color: #c97d7d;
 }
 
 .cm-editor .cm-diagnostic-warning {
-  border-left-color: #d4a574;
-  background: rgba(212, 165, 116, 0.05);
+    border-left-color: #d4a574;
+    background: rgba(212, 165, 116, 0.05);
 }
 
 .cm-editor .cm-diagnostic-info {
-  border-left-color: #7da4c9;
-  background: rgba(125, 164, 201, 0.05);
+    border-left-color: #7da4c9;
+    background: rgba(125, 164, 201, 0.05);
 }
 
 .cm-editor .cm-diagnostic-hint {
-  border-left-color: #8b7fa8;
-  background: rgba(139, 127, 168, 0.05);
+    border-left-color: #8b7fa8;
+    background: rgba(139, 127, 168, 0.05);
 }
 
 /* Lint range underlines */
 .cm-editor .cm-lintRange-error {
-  background: transparent;
-  text-decoration: wavy underline #c97d7d;
-  text-underline-offset: 3px;
+    background: transparent;
+    text-decoration: wavy underline #c97d7d;
+    text-underline-offset: 3px;
 }
 
 .cm-editor .cm-lintRange-warning {
-  background: transparent;
-  text-decoration: wavy underline #d4a574;
-  text-underline-offset: 3px;
+    background: transparent;
+    text-decoration: wavy underline #d4a574;
+    text-underline-offset: 3px;
 }
 
 .cm-editor .cm-lintRange-info {
-  background: transparent;
-  text-decoration: wavy underline #7da4c9;
-  text-underline-offset: 3px;
+    background: transparent;
+    text-decoration: wavy underline #7da4c9;
+    text-underline-offset: 3px;
 }
 
 .cm-editor .cm-lintRange-hint {
-  background: transparent;
-  text-decoration: dotted underline #8b7fa8;
-  text-underline-offset: 3px;
+    background: transparent;
+    text-decoration: dotted underline #8b7fa8;
+    text-underline-offset: 3px;
 }
 
 /* Search matches */
 .cm-editor .cm-searchMatch {
-  background: rgba(139, 127, 168, 0.2);
-  border-radius: 2px;
+    background: rgba(139, 127, 168, 0.2);
+    border-radius: 2px;
 }
 
 .cm-editor .cm-searchMatch.cm-searchMatch-selected {
-  background: rgba(212, 165, 116, 0.3);
+    background: rgba(212, 165, 116, 0.3);
 }
 
 /* Bracket matching */
 .cm-editor .cm-matchingBracket {
-  background: rgba(212, 165, 116, 0.2);
-  color: #d4a574;
-  font-weight: 600;
-  border-radius: 2px;
+    background: rgba(212, 165, 116, 0.2);
+    color: #d4a574;
+    font-weight: 600;
+    border-radius: 2px;
 }
 
 .cm-editor .cm-nonmatchingBracket {
-  background: rgba(201, 125, 125, 0.2);
-  color: #c97d7d;
-  text-decoration: underline;
+    background: rgba(201, 125, 125, 0.2);
+    color: #c97d7d;
+    text-decoration: underline;
 }
 
 /* Placeholder text */
 .cm-editor .cm-placeholder {
-  color: rgba(212, 165, 116, 0.3);
-  font-style: italic;
+    color: rgba(212, 165, 116, 0.3);
+    font-style: italic;
 }
 
 /* Gutter styling */
 .cm-editor .cm-gutters {
-  background: transparent;
-  border-right: none;
+    background: transparent;
+    border-right: none;
 }

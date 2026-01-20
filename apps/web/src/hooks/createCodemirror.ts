@@ -8,12 +8,13 @@ import { defaultKeymap, history, historyKeymap } from "@codemirror/commands";
 import { markdown } from "@codemirror/lang-markdown";
 import {
 	bracketMatching,
-	defaultHighlightStyle,
 	foldGutter,
 	foldKeymap,
+	HighlightStyle,
 	indentOnInput,
 	syntaxHighlighting,
 } from "@codemirror/language";
+import { languages } from "@codemirror/language-data";
 import { highlightSelectionMatches, searchKeymap } from "@codemirror/search";
 import {
 	Compartment,
@@ -31,6 +32,7 @@ import {
 	keymap,
 	lineNumbers,
 } from "@codemirror/view";
+import { tags } from "@lezer/highlight";
 import { type Accessor, createEffect, on, onCleanup, onMount } from "solid-js";
 
 interface CodeMirrorProps {
@@ -82,6 +84,92 @@ function createThemeExtension() {
 	return theme;
 }
 
+const markdownHighlightStyle = HighlightStyle.define([
+	{ tag: tags.keyword, color: "#c792ea" },
+	{ tag: tags.operator, color: "#89ddff" },
+	{ tag: tags.special(tags.variableName), color: "#eeffff" },
+	{ tag: tags.typeName, color: "#ffcb6b" },
+	{ tag: tags.atom, color: "#f78c6c" },
+	{ tag: tags.number, color: "#f78c6c" },
+	{ tag: tags.definition(tags.variableName), color: "#82aaff" },
+	{ tag: tags.string, color: "#c3e88d" },
+	{ tag: tags.special(tags.string), color: "#c3e88d" },
+	{ tag: tags.comment, color: "#637777", fontStyle: "italic" },
+	{ tag: tags.variableName, color: "#eeffff" },
+	{ tag: tags.tagName, color: "#f07178" },
+	{ tag: tags.bracket, color: "#89ddff" },
+	{ tag: tags.meta, color: "#ffcb6b" },
+	{ tag: tags.attributeName, color: "#c792ea" },
+	{ tag: tags.propertyName, color: "#82aaff" },
+	{ tag: tags.className, color: "#ffcb6b" },
+	{ tag: tags.invalid, color: "#ff5370" },
+	{
+		tag: tags.heading1,
+		fontSize: "1.75rem",
+		fontWeight: "700",
+		color: "#d4a574",
+		fontFamily: '"Fraunces", Georgia, serif',
+		textDecoration: "none",
+	},
+	{
+		tag: tags.heading2,
+		fontSize: "1.5rem",
+		fontWeight: "600",
+		color: "rgba(212, 165, 116, 0.9)",
+		fontFamily: '"Fraunces", Georgia, serif',
+		textDecoration: "none",
+	},
+	{
+		tag: tags.heading3,
+		fontSize: "1.25rem",
+		fontWeight: "600",
+		color: "rgba(212, 165, 116, 0.8)",
+		fontFamily: '"Fraunces", Georgia, serif',
+		textDecoration: "none",
+	},
+	{
+		tag: tags.heading4,
+		fontSize: "1.125rem",
+		fontWeight: "500",
+		color: "rgba(212, 165, 116, 0.7)",
+		fontFamily: '"Fraunces", Georgia, serif',
+		textDecoration: "none",
+	},
+	{
+		tag: tags.heading5,
+		fontSize: "1rem",
+		fontWeight: "500",
+		color: "rgba(212, 165, 116, 0.6)",
+		fontFamily: '"Fraunces", Georgia, serif',
+		textDecoration: "none",
+	},
+	{
+		tag: tags.heading6,
+		fontSize: "0.9375rem",
+		fontWeight: "500",
+		color: "rgba(212, 165, 116, 0.5)",
+		fontFamily: '"Fraunces", Georgia, serif',
+		textDecoration: "none",
+	},
+	{
+		tag: tags.processingInstruction,
+		color: "rgba(212, 165, 116, 0.4)",
+	},
+	{
+		tag: tags.link,
+		color: "#7da4c9",
+		textDecoration: "none",
+	},
+	{
+		tag: tags.url,
+		color: "rgba(125, 164, 201, 0.7)",
+	},
+	{
+		tag: tags.labelName,
+		color: "rgba(125, 164, 201, 0.7)",
+	},
+]);
+
 export function createCodeMirror(
 	props: CodeMirrorProps,
 	ref: Accessor<HTMLDivElement | undefined>,
@@ -109,14 +197,14 @@ export function createCodeMirror(
 				dropCursor(),
 				EditorState.allowMultipleSelections.of(true),
 				indentOnInput(),
-				syntaxHighlighting(defaultHighlightStyle),
+				syntaxHighlighting(markdownHighlightStyle),
 				bracketMatching(),
 				closeBrackets(),
 				autocompletion(),
 				highlightActiveLine(),
 				highlightActiveLineGutter(),
 				highlightSelectionMatches(),
-				markdown(),
+				markdown({ codeLanguages: languages }),
 				themeExtension,
 				keymap.of([
 					...closeBracketsKeymap,
