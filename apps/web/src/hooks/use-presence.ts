@@ -1,75 +1,75 @@
 import {
-  type DeviceId,
-  type DocHandle,
-  PeerStateView,
-  Presence,
-  type PresenceConfig,
-  type PresenceState,
-  type UserId,
+	type DeviceId,
+	type DocHandle,
+	PeerStateView,
+	Presence,
+	type PresenceConfig,
+	type PresenceState,
+	type UserId,
 } from "@automerge/automerge-repo/slim";
 import { type Accessor, createSignal, onCleanup, onMount } from "solid-js";
 
 export type UsePresenceConfig<State extends PresenceState> =
-  PresenceConfig<State> & {
-    handle: DocHandle<unknown>;
-    userId?: UserId;
-    deviceId?: DeviceId;
-  };
+	PresenceConfig<State> & {
+		handle: DocHandle<unknown>;
+		userId?: UserId;
+		deviceId?: DeviceId;
+	};
 
 export type UsePresenceResult<State extends PresenceState> = {
-  peerStates: Accessor<PeerStateView<State>>;
-  localState: Accessor<State> | undefined;
-  update: <Channel extends keyof State>(
-    channel: Channel,
-    value: State[Channel],
-  ) => void;
+	peerStates: Accessor<PeerStateView<State>>;
+	localState: Accessor<State> | undefined;
+	update: <Channel extends keyof State>(
+		channel: Channel,
+		value: State[Channel],
+	) => void;
 };
 
 export function usePresence<State extends PresenceState>({
-  handle,
-  userId,
-  deviceId,
-  initialState,
-  heartbeatMs,
-  peerTtlMs,
+	handle,
+	userId,
+	deviceId,
+	initialState,
+	heartbeatMs,
+	peerTtlMs,
 }: UsePresenceConfig<State>): UsePresenceResult<State> {
-  const [localState, setLocalState] = createSignal<State>(initialState);
-  const [peerStates, setPeerStates] = createSignal(
-    new PeerStateView<State>({}),
-  );
-  const [presence] = createSignal(
-    new Presence<State>({ handle, userId, deviceId }),
-  );
+	const [localState, setLocalState] = createSignal<State>(initialState);
+	const [peerStates, setPeerStates] = createSignal(
+		new PeerStateView<State>({}),
+	);
+	const [presence] = createSignal(
+		new Presence<State>({ handle, userId, deviceId }),
+	);
 
-  onMount(() => {
-    presence().start({
-      initialState,
-      heartbeatMs,
-      peerTtlMs,
-    });
+	onMount(() => {
+		presence().start({
+			initialState,
+			heartbeatMs,
+			peerTtlMs,
+		});
 
-    presence().on("heartbeat", () => setPeerStates(presence().getPeerStates()));
-    presence().on("snapshot", () => setPeerStates(presence().getPeerStates()));
-    presence().on("update", () => setPeerStates(presence().getPeerStates()));
-    presence().on("goodbye", () => setPeerStates(presence().getPeerStates()));
-  });
+		presence().on("heartbeat", () => setPeerStates(presence().getPeerStates()));
+		presence().on("snapshot", () => setPeerStates(presence().getPeerStates()));
+		presence().on("update", () => setPeerStates(presence().getPeerStates()));
+		presence().on("goodbye", () => setPeerStates(presence().getPeerStates()));
+	});
 
-  onCleanup(() => {
-    presence().stop();
-  });
+	onCleanup(() => {
+		presence().stop();
+	});
 
-  const update = <Channel extends keyof State>(
-    channel: Channel,
-    msg: State[Channel],
-  ) => {
-    presence().broadcast(channel, msg);
-    const updated = presence().getLocalState();
-    setLocalState(() => updated);
-  };
+	const update = <Channel extends keyof State>(
+		channel: Channel,
+		msg: State[Channel],
+	) => {
+		presence().broadcast(channel, msg);
+		const updated = presence().getLocalState();
+		setLocalState(() => updated);
+	};
 
-  return {
-    localState,
-    peerStates,
-    update,
-  };
+	return {
+		localState,
+		peerStates,
+		update,
+	};
 }
