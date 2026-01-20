@@ -6,10 +6,10 @@ import {
 } from "@codemirror/autocomplete";
 import { defaultKeymap, history, historyKeymap } from "@codemirror/commands";
 import { markdown } from "@codemirror/lang-markdown";
+import { languages } from "@codemirror/language-data";
 import {
   HighlightStyle,
   bracketMatching,
-  defaultHighlightStyle,
   foldGutter,
   foldKeymap,
   indentOnInput,
@@ -84,14 +84,25 @@ function createThemeExtension() {
   return theme;
 }
 
-/**
- * Custom highlight style for markdown elements optimized for the dark theme.
- * Extends defaultHighlightStyle with custom heading colors and readable link styling.
- */
 const markdownHighlightStyle = HighlightStyle.define([
-  // Include all default styles as a base
-  ...defaultHighlightStyle.specs,
-  // Override with custom markdown styles
+  { tag: tags.keyword, color: "#c792ea" },
+  { tag: tags.operator, color: "#89ddff" },
+  { tag: tags.special(tags.variableName), color: "#eeffff" },
+  { tag: tags.typeName, color: "#ffcb6b" },
+  { tag: tags.atom, color: "#f78c6c" },
+  { tag: tags.number, color: "#f78c6c" },
+  { tag: tags.definition(tags.variableName), color: "#82aaff" },
+  { tag: tags.string, color: "#c3e88d" },
+  { tag: tags.special(tags.string), color: "#c3e88d" },
+  { tag: tags.comment, color: "#637777", fontStyle: "italic" },
+  { tag: tags.variableName, color: "#eeffff" },
+  { tag: tags.tagName, color: "#f07178" },
+  { tag: tags.bracket, color: "#89ddff" },
+  { tag: tags.meta, color: "#ffcb6b" },
+  { tag: tags.attributeName, color: "#c792ea" },
+  { tag: tags.propertyName, color: "#82aaff" },
+  { tag: tags.className, color: "#ffcb6b" },
+  { tag: tags.invalid, color: "#ff5370" },
   {
     tag: tags.heading1,
     fontSize: "1.75rem",
@@ -140,23 +151,19 @@ const markdownHighlightStyle = HighlightStyle.define([
     fontFamily: '"Fraunces", Georgia, serif',
     textDecoration: "none",
   },
-  // Muted styling for heading markers (# symbols)
   {
     tag: tags.processingInstruction,
     color: "rgba(212, 165, 116, 0.4)",
   },
-  // Link text styling - info blue for readability on dark background
   {
     tag: tags.link,
     color: "#7da4c9",
     textDecoration: "none",
   },
-  // URL styling - muted info blue for the URL portion
   {
     tag: tags.url,
     color: "rgba(125, 164, 201, 0.7)",
   },
-  // Label name styling (used for link labels)
   {
     tag: tags.labelName,
     color: "rgba(125, 164, 201, 0.7)",
@@ -197,7 +204,7 @@ export function createCodeMirror(
         highlightActiveLine(),
         highlightActiveLineGutter(),
         highlightSelectionMatches(),
-        markdown(),
+        markdown({ codeLanguages: languages }),
         themeExtension,
         keymap.of([
           ...closeBracketsKeymap,
