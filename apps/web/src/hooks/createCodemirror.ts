@@ -205,6 +205,7 @@ export function createCodeMirror(
 				highlightActiveLineGutter(),
 				highlightSelectionMatches(),
 				markdown({ codeLanguages: languages }),
+				EditorView.lineWrapping,
 				themeExtension,
 				keymap.of([
 					...closeBracketsKeymap,
